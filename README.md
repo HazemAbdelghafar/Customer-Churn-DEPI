@@ -87,5 +87,5 @@ This outperformed both Random Forest and Logistic Regression across all key metr
    ```
 4. Run the notebook cells to reproduce the analysis and model training.
 
-<div align="center"> <i>This project was developed as part of the DEPI graduation project.</i> </div>
+<div align="center"> <b?><i>This project was developed as part of the DEPI graduation project.</i></b> </div>
 
