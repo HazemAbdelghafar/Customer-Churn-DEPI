@@ -1,7 +1,7 @@
 # Customer Churn Prediction and Analysis
 
 <div align="center">
-  <img src="./Label_Image.png" alt="Customer Churn" width="600px">
+  <img src="./assets/Label_Image.png" alt="Customer Churn" width="600px">
 </div>
 
 ## 🧠 Project Overview
