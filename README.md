@@ -17,6 +17,7 @@ This project implements advanced machine learning techniques to predict customer
 - Detailed performance evaluation with confusion matrices, ROC curves, and AUC metrics
 - MLOps implementation for model deployment and monitoring
 - Dual deployment: Streamlit (interactive UI) and FastAPI (API + web interface)
+- Containerized deployment with Docker for FastAPI
 - Logging for both API and Streamlit apps for monitoring and debugging
 
 ## 📁 Project Structure
@@ -37,6 +38,7 @@ Customer-Churn-DEPI/
 ├── fastapi_app.py        # FastAPI app (API + web interface)
 ├── streamlit_app.py      # Streamlit app (interactive UI)
 ├── requirements.txt      # Python dependencies
+├── Dockerfile            # Docker container definition
 ├── README.md             # Project documentation
 ├── ...                   # Other assets, notebooks, images
 ```
@@ -67,6 +69,7 @@ Customer-Churn-DEPI/
 ### Milestone 4: MLOps & Deployment
 - Developed a user-friendly web application using **Streamlit** for real-time customer churn prediction.
 - Developed a robust **FastAPI** app for both API and web-based JSON input.
+- **Containerized the FastAPI app using Docker for easy deployment and scalability.**
 - Integrated the preprocessing pipeline into both apps to ensure consistency with the training process.
 - Saved and loaded the trained scaler and model using **pickle** for seamless deployment (see `model/` directory).
 - Designed interactive interfaces for users to input customer data and view predictions.
@@ -91,7 +94,7 @@ This outperformed both Random Forest and Logistic Regression across all key metr
 - **Visualization**: Matplotlib, Seaborn, Plotly
 - **Machine Learning**: Scikit-learn, XGBoost, Random Forest, Logistic Regression
 - **Statistical Analysis**: T-Tests, Chi-Squared Tests
-- **Deployment**: Streamlit, FastAPI, Pickle, Logging
+- **Deployment**: Streamlit, FastAPI, Pickle, Docker, Logging
 
 ## 🔧 Getting Started
 
@@ -113,10 +116,10 @@ streamlit run streamlit_app.py
 
 ### 4. Run the FastAPI app (API + web interface):
 ```bash
-uvicorn fastapi_app:app --reload --port 8000
+uvicorn fastapi_app:app --reload --port 9000
 ```
-- Visit [http://127.0.0.1:8000/](http://127.0.0.1:8000/) for the interactive JSON web interface.
-- Visit [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) for the interactive API documentation (Swagger UI).
+- Visit [http://127.0.0.1:9000/](http://127.0.0.1:9000/) for the interactive JSON web interface.
+- Visit [http://127.0.0.1:9000/docs](http://127.0.0.1:9000/docs) for the interactive API documentation (Swagger UI).
 
 ### 5. Run the notebook cells to reproduce the analysis and model training.
 
@@ -124,7 +127,26 @@ uvicorn fastapi_app:app --reload --port 8000
 - Streamlit logs: `streamlit_app.log`
 - FastAPI logs: `fastapi_app.log`
 
-<br>
+---
+
+## 🚢 Docker: Containerized FastAPI Deployment
+
+You can run the FastAPI app in a Docker container for easy deployment anywhere:
+
+1. **Build the Docker image:**
+   ```sh
+   docker build -t churn-fastapi-app .
+   ```
+2. **Run the Docker container:**
+   ```sh
+   docker run -d -p 9000:9000 churn-fastapi-app
+   ```
+3. **Access your app at:**
+   - [http://127.0.0.1:9000/](http://127.0.0.1:9000/)
+   - [http://127.0.0.1:9000/docs](http://127.0.0.1:9000/docs)
+
+---
+
 <br>
 <div align="center"> <b><i>This project was developed as part of the DEPI graduation project.</i></b> </div>
 
