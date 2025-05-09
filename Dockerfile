@@ -1,8 +1,11 @@
 # Use official Python image
-FROM python:3.10-slim
+FROM python:3.10.14-slim-bullseye
 
 # Set work directory
 WORKDIR /app
+
+# Upgrade system packages to reduce vulnerabilities
+RUN apt-get update && apt-get upgrade -y
 
 # Copy requirements and install dependencies
 COPY requirements.txt ./
