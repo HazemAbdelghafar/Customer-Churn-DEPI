@@ -109,7 +109,7 @@ cd Customer-Churn-DEPI
 pip install -r requirements.txt
 ```
 
-### 3. Run the Streamlit app (interactive UI):
+### 3. Run the Streamlit app (https://hazemabdelghafar-customer-churn-depi-streamlit-app-9r6rnm.streamlit.app):
 ```bash
 streamlit run streamlit_app.py
 ```
