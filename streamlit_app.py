@@ -32,14 +32,14 @@ def load_lottiefile(filepath: str):
     with open(filepath, "r") as f:
         return json.load(f)
        
-lottie_file = './Animation3.json'
+lottie_file = './assets/Animation3.json'
 
 lottie_file = load_lottiefile(lottie_file)
 
 def main():
-    image = Image.open("./Label_Image.png")
-    image2 = Image.open('./MCAR.png')
-    image3 = Image.open('./proAr.png')
+    image = Image.open("./assets/Label_Image.png")
+    image2 = Image.open('./assets/MCAR.png')
+    image3 = Image.open('./assets/proAr.png')
     st.image(image, width=900)  # reduces the image width to 300 pixels
 
     # Display images side by side in the sidebar
