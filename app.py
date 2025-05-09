@@ -1,3 +1,4 @@
+import json
 import math
 import time
 import datetime
@@ -5,7 +6,6 @@ import pandas as pd
 from PIL import Image
 import streamlit as st
 from pickle import load
-import json
 from streamlit_lottie import st_lottie
 
 model_file = 'best_xgb_model.pkl'
@@ -26,8 +26,6 @@ def load_lottiefile(filepath: str):
 lottie_file = './Animation3.json'
 
 lottie_file = load_lottiefile(lottie_file)
-
-
 
 def main():
     image = Image.open("./Label_Image.png")
@@ -235,6 +233,7 @@ def main():
             data = pd.read_csv(uploaded_file)
             st.write("Data Uploaded Successfully")
             st.write(data.head())
+            data=data.drop('joining_year', axis=1)
             
             if st.button("Predict"):
                 # Custom animation with progress bar
@@ -264,7 +263,6 @@ def main():
                 status_placeholder.empty()
                 
                 # Actual prediction logic
-                data=data.drop('joining_year', axis=1)
                 y_pred = model.predict(data.values)
                 print(y_pred)
 
