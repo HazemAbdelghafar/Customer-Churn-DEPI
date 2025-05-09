@@ -16,7 +16,7 @@ COPY fastapi_app.py ./
 COPY model ./model
 COPY app ./app
 
-# Expose port 8000
+# Expose port 9000
 EXPOSE 9000
 
 # Run the FastAPI app with uvicorn
