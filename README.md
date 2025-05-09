@@ -77,7 +77,7 @@ This outperformed both Random Forest and Logistic Regression across all key metr
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/youssefaymanmohamed/customer-churn-prediction.git
+   https://github.com/HazemAbdelghafar/Customer-Churn-DEPI
    cd customer-churn-prediction
    ```
 
