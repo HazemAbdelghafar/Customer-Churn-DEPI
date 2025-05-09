@@ -1,14 +1,13 @@
+import math
+import logging
+import datetime
+import pandas as pd
+from pickle import load
+from pydantic import BaseModel
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from pydantic import BaseModel
-import pandas as pd
-import math
-import datetime
-from pickle import load
-import os
-import logging
 
 app = FastAPI()
 
@@ -123,4 +122,4 @@ def predict_churn(input: ChurnInput):
         return {"prediction": result}
     except Exception as e:
         logger.error(f"Error during prediction: {e}")
-        return {"error": str(e)} 
+        return {"error": str(e)}
