@@ -7,6 +7,7 @@ from PIL import Image
 import streamlit as st
 from pickle import load
 from streamlit_lottie import st_lottie
+import logging
 
 model_file = 'best_xgb_model.pkl'
 scaler_file = 'scaler.pkl'
@@ -18,6 +19,14 @@ with open(model_file, 'rb') as f_in:
 # Load the scaler
 with open(scaler_file, 'rb') as f_in:
     scaler = load(f_in)
+
+# Set up logging
+logging.basicConfig(
+    filename='streamlit_app.log',
+    level=logging.INFO,
+    format='%(asctime)s %(levelname)s %(message)s'
+)
+logger = logging.getLogger(__name__)
 
 def load_lottiefile(filepath: str):
     with open(filepath, "r") as f:
@@ -225,6 +234,9 @@ def main():
 
             st.success("Churn Prediction: {0}".format("Will Churn" if y_pred else "Will Not Churn"))
 
+            # Log the prediction
+            logger.info(f"Single prediction request: {input_dict} | Result: {'Will Churn' if y_pred else 'Will Not Churn'}")
+
     if add_selectbox == "Batch entry":
         st.subheader("Batch Prediction")
         st.write("Upload a CSV file with the same features as above.")
@@ -268,6 +280,9 @@ def main():
 
                 for i, pred in enumerate(y_pred):
                     st.success("Churn Prediction for index {0}: {1}".format(i, "Will Churn" if pred else "Will Not Churn"))
+
+                # Log the prediction
+                logger.info(f"Batch prediction request: {data.to_dict(orient='records')} | Results: {y_pred.tolist()}")
 
 
 if __name__ == "__main__":
