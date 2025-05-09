@@ -9,8 +9,8 @@ from pickle import load
 from streamlit_lottie import st_lottie
 import logging
 
-model_file = 'best_xgb_model.pkl'
-scaler_file = 'scaler.pkl'
+model_file = 'model/best_xgb_model.pkl'
+scaler_file = 'model/scaler.pkl'
 
 # Load the model
 with open(model_file, 'rb') as f_in:
