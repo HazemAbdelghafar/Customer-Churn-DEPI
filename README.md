@@ -71,7 +71,7 @@ This outperformed both Random Forest and Logistic Regression across all key metr
 - **Visualization**: Matplotlib, Seaborn, Plotly
 - **Machine Learning**: Scikit-learn, XGBoost
 - **Statistical Analysis**: t-tests, ANOVA, chi-squared tests
-- **MLOps**: MLflow, Docker, Kubernetes (planned)
+
 
 ## 🔧 Getting Started
 
