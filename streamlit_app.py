@@ -64,6 +64,7 @@ def main():
     st.sidebar.markdown("---")
     st.sidebar.markdown("<h3 style='text-align: center; font-size:30px;'>✨ Project Team ✨</h3>", unsafe_allow_html=True)
     
+    # Project Team Members
     team_html = """
         <div>
             <ul style="list-style-type:none; font-size:16px; text-align:left; padding-left: 0;">
@@ -94,6 +95,7 @@ def main():
             </ul>
         </div>
         """
+    
     st.sidebar.markdown(team_html, unsafe_allow_html=True)
     # st.sidebar.image(image2)
     st.title("Predicting Customer Churn")
