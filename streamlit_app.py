@@ -165,7 +165,7 @@ def main():
         recency_of_last_activity = days_since_last_login
         engagement_score = avg_time_spent * avg_transaction_value
         
-        # Create input dictionary matching the features from the model
+        # Create input dictionary matching the features used in the model
         input_dict = {
             'points_in_wallet': points_in_wallet,
             'membership_category_Premium Membership': 1 if membership_category == "Premium Membership" else 0,
