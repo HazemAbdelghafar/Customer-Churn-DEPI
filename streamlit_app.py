@@ -24,9 +24,9 @@ with open(scaler_file, 'rb') as f_in:
 logging.basicConfig(
     filename='streamlit_app.log',
     level=logging.INFO,
-    format='%(asctime)s %(levelname)s %(message)s'
+    format='%(asctime)s %(levelname)s %(message)s' # format the log message (timestamp, level of the message, message) ex. 12:00:00 INFO <message>
 )
-logger = logging.getLogger(__name__)
+logger = logging.getLogger(__name__) # get the logger instance
 
 def load_lottiefile(filepath: str):
     with open(filepath, "r") as f:
